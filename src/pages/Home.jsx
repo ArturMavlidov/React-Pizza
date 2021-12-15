@@ -8,15 +8,18 @@ export default function Home({items}) {
         <Categories
           items={["Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые"]}
         />
-        <SortPopup items={["популярности", "цене", "алфавиту"]} />
+        <SortPopup
+          items={[
+            { name: "популярности", type: "popular" },
+            { name: "цене", type: "price" },
+            { name: "алфавиту", type: "Alphabet" },
+          ]}
+        />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
         {items.map((obj) => (
-          <PizzaBlock
-            {...obj}
-            key={obj.id}
-          />
+          <PizzaBlock {...obj} key={obj.id} />
         ))}
       </div>
     </div>

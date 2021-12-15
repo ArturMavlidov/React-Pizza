@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types'
 import cn from 'classnames'
+
+import './style.scss'
 
 export default function PizzaBlock({ imageUrl, name, price, types, sizes }) {
   const avaliableTypeNames = ["тонкое", "традиционное"];
@@ -26,12 +29,12 @@ export default function PizzaBlock({ imageUrl, name, price, types, sizes }) {
             avaliableTypeNames.map((type, index) => <li className={cn({
               active: activeType === index,
               disabled: !types.includes(index)
-            })} onClick={setType(index)}>{type}</li>)
+            })} onClick={setType(index)} key={`${type }_${index}`}>{type}</li>)
           }
         </ul>
         <ul>
           {
-            avaliableSizes.map((size, index) => <li className={cn({active: index === activeSize})} onClick={setSize(index)}>{size} см.</li>)
+            avaliableSizes.map((size, index) => <li className={cn({active: index === activeSize})} onClick={setSize(index)} key={`${size}_${index}`}>{size} см.</li>)
           }
         </ul>
       </div>
@@ -57,3 +60,11 @@ export default function PizzaBlock({ imageUrl, name, price, types, sizes }) {
     </div>
   );
 }
+
+PizzaBlock.propTypes = {
+  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  types: PropTypes.arrayOf(PropTypes.number).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+};

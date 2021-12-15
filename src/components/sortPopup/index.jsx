@@ -4,9 +4,8 @@ import arrowTop from '../../assets/img/arrow-top.svg'
 
 export default function SortPopup({items}) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [activeItem, setActiveItem] = useState(items[0])
+  const [activeItem, setActiveItem] = useState(items[0].name)
   const sortRef = useRef();
-
 
   const handleOutsideClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
@@ -14,7 +13,7 @@ export default function SortPopup({items}) {
     }
   };
 
-  const toggleVisiblePopup = (e) => {
+  const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
 
@@ -40,7 +39,7 @@ export default function SortPopup({items}) {
       {visiblePopup && (
         <div className="sort__popup">
           <ul>
-            {items.map( (item, index) => <li className={activeItem == item ? 'active' : ''} onClick={selectItem(item)} key={`${item}_${index}`}>{item}</li> )}
+            {items.map( (item, index) => <li className={activeItem == item.name ? 'active' : ''} onClick={selectItem(item.name)} key={`${item.type}_${index}`}>{item.name}</li> )}
           </ul>
         </div>
       )}
