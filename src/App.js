@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { connect } from 'react-redux'
 
 import { Header } from "./components";
 import { Home, Cart } from './pages'
 import {Routes, Route} from 'react-router-dom'
+import { setPizzas as setPizzasAction } from './redux/actions/pizzas'
 
 import "./app.scss";
 
@@ -19,10 +21,11 @@ import "./app.scss";
 // }
 
 class App extends React.Component {
+
   componentDidMount() {
     axios.get("http://localhost:3000/db.json")
       .then(({data}) => {
-        console.log(data.pizzas);
+        this.props.setPizzas(data.pizzas);
       })
   }
 
@@ -31,7 +34,7 @@ class App extends React.Component {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home items={[]} />} exact />
+          <Route path="/" element={<Home items={this.props.items} />} exact />
           <Route path="/cart" element={<Cart />} exact />
         </Routes>
       </div>
@@ -39,4 +42,16 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    items: state.pizzas.items,
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setPizzas: (items) => dispatch(setPizzasAction(items)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

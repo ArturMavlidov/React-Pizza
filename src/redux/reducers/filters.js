@@ -1,10 +1,12 @@
+import * as Constants from "../constants";
+
 const initialState = {
   category: 0,
-  sortBy: 'popular',
-}
+  sortBy: "popular",
+};
 
 const fitlers = (state = initialState, action) => {
-  if (action.type === "SET_SORT_BY") {
+  if (action.type === Constants.SET_SORT_BY) {
     return {
       ...state,
       sortBy: action.payload,

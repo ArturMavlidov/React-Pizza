@@ -10,10 +10,10 @@ import App from './App';
 
 import "./scss/app.scss";
 
-store.dispatch({
-  type: 'SET_SORT_BY',
-  payload: 'price'
-})
+// store.dispatch({
+//   type: 'SET_SORT_BY',
+//   payload: 'price'
+// })
 
 ReactDOM.render(
   <React.StrictMode>
