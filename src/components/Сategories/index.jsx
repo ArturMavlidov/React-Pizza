@@ -1,32 +1,39 @@
 import React, { useState } from "react";
 import './style.scss'
 
-export default function Categories({ items }) {
-  const [activeItem, setActiveItem] = useState("default");
+const Categories = React.memo(
+  function Categories({ items, onClickItem }) {
+    const [activeItem, setActiveItem] = useState("default");
 
-  const onChange = (name) => () => setActiveItem(name);
+    const onChange = (name) => () => {
+      setActiveItem(name);
+      onClickItem(name);
+    };
 
-  return (
-    <div>
-      <div className="categories">
-        <ul>
-          <li
-            className={activeItem === "default" ? "active" : ' '}
-            onClick={onChange("default")}
-          >
-            Все
-          </li>
-          {items?.map((item, index) => (
+    return (
+      <div>
+        <div className="categories">
+          <ul>
             <li
-              className={activeItem === item ? "active" : ''}
-              onClick={onChange(item)}
-              key={`${item}_${index}`}
+              className={activeItem === "default" ? "active" : " "}
+              onClick={onChange("default")}
             >
-              {item}
+              Все
             </li>
-          ))}
-        </ul>
+            {items?.map((item, index) => (
+              <li
+                className={activeItem === item ? "active" : ""}
+                onClick={onChange(item)}
+                key={`${item}_${index}`}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);
+
+export default Categories;
