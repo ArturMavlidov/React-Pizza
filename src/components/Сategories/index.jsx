@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import './style.scss'
 
 const Categories = React.memo(
-  function Categories({ items, onClickItem }) {
-    const [activeItem, setActiveItem] = useState("default");
+  function Categories({ items, categoryIndex, onClickItem }) {
 
-    const onChange = (name) => () => {
-      setActiveItem(name);
-      onClickItem(name);
+    const onChange = (index) => () => {
+      onClickItem(index);
     };
 
     return (
@@ -15,15 +13,15 @@ const Categories = React.memo(
         <div className="categories">
           <ul>
             <li
-              className={activeItem === "default" ? "active" : " "}
-              onClick={onChange("default")}
+              className={categoryIndex === null ? "active" : " "}
+              onClick={onChange(null)}
             >
               Все
             </li>
             {items?.map((item, index) => (
               <li
-                className={activeItem === item ? "active" : ""}
-                onClick={onChange(item)}
+                className={categoryIndex === index ? "active" : ""}
+                onClick={onChange(index)}
                 key={`${item}_${index}`}
               >
                 {item}

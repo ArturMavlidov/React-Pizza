@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-
 import './style.scss'
 
 export default function PizzaBlock({ imageUrl, name, price, types, sizes }) {
@@ -25,17 +24,29 @@ export default function PizzaBlock({ imageUrl, name, price, types, sizes }) {
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul>
-          {
-            avaliableTypeNames.map((type, index) => <li className={cn({
-              active: activeType === index,
-              disabled: !types.includes(index)
-            })} onClick={setType(index)} key={`${type }_${index}`}>{type}</li>)
-          }
+          {avaliableTypeNames.map((type, index) => (
+            <li
+              className={cn({
+                active: activeType === index,
+                disabled: !types.includes(index),
+              })}
+              onClick={setType(index)}
+              key={`${type}_${index}`}
+            >
+              {type}
+            </li>
+          ))}
         </ul>
         <ul>
-          {
-            avaliableSizes.map((size, index) => <li className={cn({active: index === activeSize})} onClick={setSize(index)} key={`${size}_${index}`}>{size} см.</li>)
-          }
+          {avaliableSizes.map((size, index) => (
+            <li
+              className={cn({ active: index === activeSize })}
+              onClick={setSize(index)}
+              key={`${size}_${index}`}
+            >
+              {size} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
