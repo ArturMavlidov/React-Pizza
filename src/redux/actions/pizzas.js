@@ -1,15 +1,19 @@
 import axios from "axios";
 
-export const fetchPizzas = (catIndex) => (dispatch) => {
+export const fetchPizzas = (catIndex, sort) => (dispatch) => {
   dispatch(setLoaded(false))
 
-  if (catIndex === null) {
-    return axios.get("http://localhost:3001/pizzas").then(({ data }) => {
-      dispatch(setPizzas(data));
-    });
+  if (sort == 'alphabet') {
+    sort = 'name';
   }
 
-  return axios.get(`http://localhost:3001/pizzas?category=${catIndex + 1}`).then(({ data }) => {
+  // if (catIndex === null) {
+  //   return axios.get(`http://localhost:3001/pizzas?_sort=${sort}&_order=desc`).then(({ data }) => {
+  //     dispatch(setPizzas(data));
+  //   });
+  // }
+
+  return axios.get(`http://localhost:3001/pizzas?${!catIndex ? '' : 'category=' + catIndex}&_sort=${sort}&_order=${sort == 'name' ? 'asc' : 'desc'}`).then(({ data }) => {
     dispatch(setPizzas(data));
   });
 };

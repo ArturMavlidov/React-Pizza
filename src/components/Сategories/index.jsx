@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './style.scss'
 
 const Categories = React.memo(
@@ -20,8 +20,8 @@ const Categories = React.memo(
             </li>
             {items?.map((item, index) => (
               <li
-                className={categoryIndex === index ? "active" : ""}
-                onClick={onChange(index)}
+                className={categoryIndex - 1 === index ? "active" : ""}
+                onClick={onChange(index + 1)}
                 key={`${item}_${index}`}
               >
                 {item}
