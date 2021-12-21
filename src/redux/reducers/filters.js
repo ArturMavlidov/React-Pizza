@@ -2,7 +2,7 @@ import * as Constants from "../constants";
 
 const initialState = {
   category: null,
-  sortBy: "popular",
+  sortBy: "rating",
 };
 
 const fitlers = (state = initialState, action) => {
