@@ -5,6 +5,16 @@ export const addPizzaToCart = (payload) => ({
   payload
 })
 
+export const clearCart = () => ({
+  type: Constants.CLEAR_CART,
+});
+
+export const removeCartItem = (payload) => ({
+  type: Constants.REMOVE_CART_ITEM,
+  payload
+});
+
+
 export const setTotalPrice = (payload) => ({
   type: Constants.SET_TOTAL_PRICE,
   payload

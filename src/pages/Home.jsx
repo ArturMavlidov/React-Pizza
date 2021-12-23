@@ -18,8 +18,6 @@ export default function Home() {
   const cartItems = useSelector(({ cart }) => cart.items);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
-  console.log(cartItems);
-
   useEffect(() => {
     dispatch(fetchPizzas(category, sortBy));
   }, [category, sortBy]);
@@ -50,7 +48,7 @@ export default function Home() {
       <div className="content__items">
         {isLoaded
           ? items.map((obj) => (
-              <PizzaBlock {...obj} key={obj.id} addedCount={cartItems[obj.id]?.length} addPizza={handleAddPizza} />
+              <PizzaBlock {...obj} key={obj.id} addedCount={cartItems[obj.id]?.items.length} addPizza={handleAddPizza} />
             ))
           : Array(12)
               .fill(0)

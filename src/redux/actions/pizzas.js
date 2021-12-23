@@ -8,7 +8,7 @@ export const fetchPizzas = (catIndex, sort) => (dispatch) => {
     sort = 'name';
   }
 
-  return axios.get(`http://localhost:3001/pizzas?${!catIndex ? '' : 'category=' + catIndex}&_sort=${sort}&_order=${sort == 'name' ? 'asc' : 'desc'}`).then(({ data }) => {
+  return axios.get(`/pizzas?${!catIndex ? '' : 'category=' + catIndex}&_sort=${sort}&_order=${sort == 'name' ? 'asc' : 'desc'}`).then(({ data }) => {
     dispatch(setPizzas(data));
   });
 };
