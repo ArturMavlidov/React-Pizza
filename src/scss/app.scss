@@ -17,6 +17,7 @@ body {
 }
 
 .content {
+  min-height: 613px;
   padding: 40px 0;
 
   &__title {
@@ -41,7 +42,7 @@ body {
 
   &--cart {
     max-width: 820px;
-    margin: 90px auto;
+    margin: 15px auto;
     .content__title {
       margin: 0;
     }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as constants from '../constants'
 
 export const fetchPizzas = (catIndex, sort) => (dispatch) => {
   dispatch(setLoaded(false))
@@ -7,23 +8,17 @@ export const fetchPizzas = (catIndex, sort) => (dispatch) => {
     sort = 'name';
   }
 
-  // if (catIndex === null) {
-  //   return axios.get(`http://localhost:3001/pizzas?_sort=${sort}&_order=desc`).then(({ data }) => {
-  //     dispatch(setPizzas(data));
-  //   });
-  // }
-
-  return axios.get(`http://localhost:3001/pizzas?${!catIndex ? '' : 'category=' + catIndex}&_sort=${sort}&_order=${sort == 'name' ? 'asc' : 'desc'}`).then(({ data }) => {
+  return axios.get(`/pizzas?${!catIndex ? '' : 'category=' + catIndex}&_sort=${sort}&_order=${sort == 'name' ? 'asc' : 'desc'}`).then(({ data }) => {
     dispatch(setPizzas(data));
   });
 };
 
 export const setPizzas = (payload) => ({
-  type: "SET_PIZZAS",
+  type: constants.SET_PIZZAS,
   payload,
 });
 
 export const setLoaded = (payload) => ({
-  type: "SET_LOADED",
+  type: constants.SET_LOADED,
   payload,
 });

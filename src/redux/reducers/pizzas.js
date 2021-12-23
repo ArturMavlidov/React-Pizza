@@ -1,3 +1,5 @@
+import * as constants from '../constants';
+
 const initialState = {
   items: [],
   isLoaded: false
@@ -5,14 +7,14 @@ const initialState = {
 
 const pizzas = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_PIZZAS":
+    case constants.SET_PIZZAS:
       return {
         ...state,
         items: action.payload,
         isLoaded: true,
       };
 
-    case 'SET_LOADED':
+    case constants.SET_LOADED:
       return {
         ...state,
         isLoaded: false,

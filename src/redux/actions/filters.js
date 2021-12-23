@@ -1,11 +1,11 @@
 import * as Constants from "../constants";
 
-export const setSortBy = (name) => ({
+export const setSortBy = (payload) => ({
   type: Constants.SET_SORT_BY,
-  payload: name,
+  payload
 });
 
-export const setCategory = (catName) => ({
+export const setCategory = (payload) => ({
   type: Constants.SET_CATEGORY,
-  payload: catName,
+  payload
 });
