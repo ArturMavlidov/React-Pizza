@@ -5,8 +5,14 @@ export const addPizzaToCart = (payload) => ({
   payload
 })
 
-export const clearCart = () => ({
-  type: Constants.CLEAR_CART,
+export const plusCartItem = (payload) => ({
+  type: Constants.PLUS_CART_ITEM,
+  payload,
+});
+
+export const minusCartItem = (payload) => ({
+  type: Constants.MINUS_CART_ITEM,
+  payload,
 });
 
 export const removeCartItem = (payload) => ({
@@ -14,13 +20,6 @@ export const removeCartItem = (payload) => ({
   payload
 });
 
-
-export const setTotalPrice = (payload) => ({
-  type: Constants.SET_TOTAL_PRICE,
-  payload
+export const clearCart = () => ({
+  type: Constants.CLEAR_CART,
 });
-
-export const setTotalCount = (payload) => ({
-  type: Constants.SET_TOTAL_COUNT,
-  payload
-})

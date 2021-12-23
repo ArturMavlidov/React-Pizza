@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import CartItem from "../components/CartItem";
 
-import { clearCart } from '../redux/actions/cart'
+import { clearCart, plusCartItem, minusCartItem } from '../redux/actions/cart'
 
 import cartEmptyImg from "../assets/img/empty-cart.png";
 
@@ -15,6 +15,14 @@ export default function Cart() {
   const addedPizzas = Object.keys(items).map((key) => {
     return items[key].items[0];
   });
+
+  const onPlusItem = (id) => {
+    dispatch(plusCartItem(id))
+  }
+
+  const onMinusItem = (id) => {
+    dispatch(minusCartItem(id));
+  };
 
   const onClearCart = () => {
     dispatch(clearCart())
@@ -118,7 +126,7 @@ export default function Cart() {
           </div>
         </div>
         <div className="content__items">
-          {addedPizzas.map((obj, index) => (
+          {addedPizzas.map((obj) => (
             <CartItem
               id={obj.id}
               name={obj.name}
@@ -126,6 +134,8 @@ export default function Cart() {
               size={obj.size}
               totalPrice={items[obj.id].totalPrice}
               totalCount={items[obj.id].items.length}
+              onMinus={onMinusItem}
+              onPlus={onPlusItem}
               key={obj.id}
             />
           ))}

@@ -3,8 +3,16 @@ import { useDispatch } from 'react-redux'
 import { removeCartItem } from "../../redux/actions/cart";
 import Button from '../Button'
 
-export default function CartItem({ id, name, type, size, totalPrice, totalCount }) {
+export default function CartItem({ id, name, type, size, totalPrice, totalCount, onPlus, onMinus }) {
   const dispatch = useDispatch();
+
+  const handleMinusItem = () => {
+    onMinus(id);
+  };
+
+  const handlePlusItem = () => {
+    onPlus(id);
+  };
 
   const onRemoveItem = (id) => {
     dispatch(removeCartItem(id))
@@ -26,7 +34,7 @@ export default function CartItem({ id, name, type, size, totalPrice, totalCount 
         </p>
       </div>
       <div className="cart__item-count">
-        <Button outline className="button--circle cart__item-count-minus">
+        <Button  onClick={totalCount > 1 ? handleMinusItem : null} outline className="button--circle cart__item-count-minus">
           <svg
             width="10"
             height="10"
@@ -45,8 +53,9 @@ export default function CartItem({ id, name, type, size, totalPrice, totalCount 
           </svg>
         </Button>
         <b>{totalCount}</b>
-        <Button outline className="button--circle cart__item-count-plus">
+        <Button  onClick={handlePlusItem} outline className="button--circle cart__item-count-plus">
           <svg
+
             width="10"
             height="10"
             viewBox="0 0 10 10"
