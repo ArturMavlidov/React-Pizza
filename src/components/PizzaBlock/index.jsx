@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import PropTypes from 'prop-types'
+import React, { useState, memo } from "react";
 import cn from 'classnames'
 import Button from '../Button'
 
 import './style.scss'
 
-export default function PizzaBlock({ id, imageUrl, name, price, types, sizes, addedCount, addPizza}) {
+const PizzaBlock = memo(({ id, imageUrl, name, price, types, sizes, addedCount, addPizza}) => {
   const avaliableTypes = ["тонкое", "традиционное"];
   const avaliableSizes = sizes;
+
+  console.log('block');
 
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
@@ -85,14 +86,6 @@ export default function PizzaBlock({ id, imageUrl, name, price, types, sizes, ad
       </div>
     </div>
   );
-}
+});
 
-PizzaBlock.propTypes = {
-  name: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  types: PropTypes.arrayOf(PropTypes.number).isRequired,
-  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
-  addPizza: PropTypes.func.isRequired,
-  addedCount: PropTypes.number
-};
+export default PizzaBlock;

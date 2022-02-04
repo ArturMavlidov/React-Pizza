@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Categories, SortPopup, PizzaBlock, LoadingBlock } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory, setSortBy } from "../redux/actions/filters";
@@ -30,9 +30,9 @@ export default function Home() {
     dispatch(setSortBy(item));
   }, []);
 
-  const handleAddPizza = (obj) => {
+  const handleAddPizza = useCallback((obj) => {
     dispatch(addPizzaToCart(obj));
-  };
+  }, []);
 
   return (
     <div className="container">
