@@ -8,8 +8,6 @@ const PizzaBlock = memo(({ id, imageUrl, name, price, types, sizes, addedCount, 
   const avaliableTypes = ["тонкое", "традиционное"];
   const avaliableSizes = sizes;
 
-  console.log('block');
-
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
 
