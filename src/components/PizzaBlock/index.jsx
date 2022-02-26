@@ -19,12 +19,18 @@ const PizzaBlock = memo(({ id, imageUrl, name, price, types, sizes, addedCount, 
     setActiveSize(index);
   };
 
+  const checkSize = () => {
+    if (activeSize === 1) return price + 150;
+    if (activeSize === 2) return price + 225;
+    return price;
+  }
+
   const handleAddPizza = () => {
     const obj = {
       id,
       name,
       imageUrl,
-      price,
+      price: checkSize(),
       size: sizes[activeSize],
       type: avaliableTypes[activeType],
     };
@@ -64,7 +70,7 @@ const PizzaBlock = memo(({ id, imageUrl, name, price, types, sizes, addedCount, 
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+        <div className="pizza-block__price">от {checkSize()} ₽</div>
         <Button onClick={handleAddPizza} className="button--add" outline>
           <svg
             width="12"
