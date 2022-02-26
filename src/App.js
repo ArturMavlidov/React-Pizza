@@ -12,7 +12,7 @@ export default function App() {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home/>} exact />
+          <Route path="/React-Pizza" element={<Home/>} exact />
           <Route path="/cart" element={<Cart />} exact />
         </Routes>
       </div>

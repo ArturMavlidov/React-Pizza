@@ -150,7 +150,7 @@ export default function Cart() {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/">
+            <Link to="/React-Pizza">
               <div className="button button--outline button--add go-back-btn">
                 <svg
                   width="8"

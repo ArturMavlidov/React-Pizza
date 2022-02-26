@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
-import {setTotalPrice} from '../../redux/actions/cart'
 
 import Button from "../Button";
 
@@ -11,12 +10,11 @@ import "./style.scss";
 
 export default function Header() {
   const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
-  const dispatch = useDispatch();
 
   return (
     <div className="header">
       <div className="container">
-        <Link to="/">
+        <Link to="/React-Pizza">
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="Pizza logo" />
             <div>

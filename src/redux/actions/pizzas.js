@@ -4,7 +4,7 @@ import * as constants from '../constants'
 export const fetchPizzas = (catIndex, sort) => (dispatch) => {
   dispatch(setLoaded(false))
 
-  if (sort == 'alphabet') {
+  if (sort === 'alphabet') {
     sort = 'name';
   }
 
