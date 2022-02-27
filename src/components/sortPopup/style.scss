@@ -4,6 +4,10 @@
   position: relative;
   min-width: 246px;
 
+  @media (max-width: 1275px) {
+    margin-top: 25px;
+  }
+
   &__label {
     display: flex;
     align-items: center;

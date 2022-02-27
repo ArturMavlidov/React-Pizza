@@ -1,7 +1,12 @@
-@import '../../scss/variables';
-@import '../../scss/mixins';
+@import "../../scss/variables";
+@import "../../scss/mixins";
 
 .categories {
+  @media (max-width: 1000px) {
+    max-width: 1150px;
+    overflow-x: scroll;
+  }
+
   ul {
     display: flex;
 

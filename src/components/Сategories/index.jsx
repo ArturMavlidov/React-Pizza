@@ -9,7 +9,6 @@ const Categories = React.memo(
     };
 
     return (
-      <div>
         <div className="categories">
           <ul>
             <li
@@ -29,7 +28,6 @@ const Categories = React.memo(
             ))}
           </ul>
         </div>
-      </div>
     );
   }
 );

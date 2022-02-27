@@ -31,6 +31,7 @@ const SortPopup = React.memo(function SortPopup({ items, onClick: selectSort }) 
   const selectItem = (name, type) => () => {
     setActiveItem(name);
     selectSort(type);
+    toggleVisiblePopup();
   };
 
   return (
