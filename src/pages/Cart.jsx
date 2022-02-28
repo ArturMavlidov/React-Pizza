@@ -130,6 +130,7 @@ export default function Cart() {
             <CartItem
               id={obj.id}
               name={obj.name}
+              img={obj.imageUrl}
               type={obj.type}
               size={obj.size}
               totalPrice={items[obj.id].totalPrice}
