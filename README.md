@@ -1,7 +1,7 @@
 # Hello!
 
 This is my training project on react.js + redux. 
-for your convenience, I posted the project on a hosting - [click](https://arturmavlidov.github.io/React-Pizza/).
+For your convenience, I posted the project on a hosting - [click](https://arturmavlidov.github.io/React-Pizza/).
 
 Well, if you want to work with this project, here is the instruction:
 
