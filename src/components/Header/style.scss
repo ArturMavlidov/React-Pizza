@@ -38,6 +38,10 @@
       @media (max-width: 640px) {
         max-width: 70%;
       }
+
+      @media (max-width: 340px) {
+        max-width: 100%;
+      }
     }
 
     h1 {
@@ -97,7 +101,7 @@
     font-weight: 600;
     font-size: 16px;
 
-    @media (max-width: 370px) {
+    @media (max-width: 325px) {
       font-size: 14px;
     }
   }
