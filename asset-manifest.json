@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/React-Pizza/static/css/main.25173158.chunk.css",
-    "main.js": "/React-Pizza/static/js/main.0afbd68d.chunk.js",
-    "main.js.map": "/React-Pizza/static/js/main.0afbd68d.chunk.js.map",
+    "main.css": "/React-Pizza/static/css/main.814aebf5.chunk.css",
+    "main.js": "/React-Pizza/static/js/main.a2732084.chunk.js",
+    "main.js.map": "/React-Pizza/static/js/main.a2732084.chunk.js.map",
     "runtime-main.js": "/React-Pizza/static/js/runtime-main.56949edd.js",
     "runtime-main.js.map": "/React-Pizza/static/js/runtime-main.56949edd.js.map",
     "static/js/2.70095707.chunk.js": "/React-Pizza/static/js/2.70095707.chunk.js",
     "static/js/2.70095707.chunk.js.map": "/React-Pizza/static/js/2.70095707.chunk.js.map",
     "index.html": "/React-Pizza/index.html",
-    "static/css/main.25173158.chunk.css.map": "/React-Pizza/static/css/main.25173158.chunk.css.map",
+    "static/css/main.814aebf5.chunk.css.map": "/React-Pizza/static/css/main.814aebf5.chunk.css.map",
     "static/js/2.70095707.chunk.js.LICENSE.txt": "/React-Pizza/static/js/2.70095707.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/React-Pizza/static/media/ProximaNova-Regular.d97f8f32.eot",
     "static/media/arrow-top.cfefae00.svg": "/React-Pizza/static/media/arrow-top.cfefae00.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.56949edd.js",
     "static/js/2.70095707.chunk.js",
-    "static/css/main.25173158.chunk.css",
-    "static/js/main.0afbd68d.chunk.js"
+    "static/css/main.814aebf5.chunk.css",
+    "static/js/main.a2732084.chunk.js"
   ]
 }
