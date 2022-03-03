@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import cn from "classnames";
 import "./style.scss";
 
-const Button = memo(({ outline, children, className, onClick, data }) => {
+const Button = memo(({ outline, children, className, onClick }) => {
 
   return (
     <button

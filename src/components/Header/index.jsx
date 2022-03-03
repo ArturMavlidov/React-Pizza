@@ -11,6 +11,15 @@ import "./style.scss";
 export default function Header() {
   const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
 
+  const setPrice = () => {
+    let maxlength = 4;
+    let priceStr = String(totalPrice);
+    if (priceStr.length > maxlength) {
+      priceStr = priceStr.slice(0, maxlength) + "...";
+    }
+    return priceStr;
+  }
+
   return (
     <div className="header">
       <div className="container">
@@ -26,7 +35,7 @@ export default function Header() {
         <div className="header__cart">
           <Link to="/cart">
             <Button className="button--cart">
-              <span>{totalPrice} ₽</span>
+              <span>{setPrice()} ₽</span>
               <div className="button__delimiter"></div>
               <img src={cartSvg} alt="" />
               <span>{totalCount}</span>
