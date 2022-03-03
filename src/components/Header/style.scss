@@ -73,8 +73,9 @@
   }
 }
 
-.button--cart {
+.button-cart {
   display: flex !important;
+  justify-content: space-between;
   align-items: center;
   line-height: 23px;
   padding: 12px 25px !important;
@@ -87,10 +88,6 @@
     padding: 12px 12px !important;
   }
 
-  @media (max-width: 385px) {
-      max-width: 155px;
-  }
-
   @media (max-width: 370px) {
     padding: 8px 8px !important;
   }
@@ -101,12 +98,21 @@
   }
 
   span {
+    display: inline-block;
     white-space: nowrap;
     font-weight: 600;
     font-size: 16px;
+    width: 49%;
+  }
 
-    @media (max-width: 325px) {
-      font-size: 14px;
+  &__right {
+    display: flex;
+    width: 49%;
+
+    span {
+      @media (max-width: 550px) {
+        display: none;
+      }
     }
   }
 }
@@ -115,6 +121,8 @@
   width: 1px;
   height: 25px;
   background-color: rgba(255, 255, 255, 0.25);
-  margin-left: 14px;
-  margin-right: 14px;
+  margin: 0 10px;
+
+  @media (max-width: 540px) {
+  }
 }
