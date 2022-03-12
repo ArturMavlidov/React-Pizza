@@ -4,17 +4,18 @@ import * as constants from '../constants'
 export const fetchPizzas = (catIndex, sort) => (dispatch) => {
   dispatch(setLoaded(false))
 
-  if (sort === 'alphabet') {
-    sort = 'name';
-  }
 
   const sortPizzas = (arr) => {
     const pizzas = catIndex ? arr.filter((item) => item.category === catIndex) : arr;
 
+    const sortByAlphabet = (a, b) => {
+      return a.name.localeCompare(b.name);
+    }
+
     pizzas.sort((a, b) => {
       if (sort === "rating") return b.rating - a.rating;
       if (sort === "price") return b.price - a.price;
-      if (sort === "alphabet") return b.name - a.name;
+      if (sort === "alphabet") return sortByAlphabet(a, b);
     });
 
     return pizzas;
