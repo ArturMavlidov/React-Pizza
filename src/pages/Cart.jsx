@@ -39,7 +39,7 @@ export default function Cart() {
             Для того, чтобы заказать пиццу, перейдите на главную страницу.
           </p>
           <img src={cartEmptyImg} alt="Empty cart" />
-          <Link to="/React-Pizza">
+          <Link to="/">
             <div className="button button--black">
               <span>Вернуться назад</span>
             </div>
@@ -151,7 +151,7 @@ export default function Cart() {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/React-Pizza">
+            <Link to="/">
               <div className="button button--outline button--add go-back-btn">
                 <svg
                   width="8"

@@ -12,7 +12,7 @@ import "./scss/app.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/React-Pizza'>
       <Provider store={store}>
         <App />
       </Provider>
